@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Server Status</title>
+  <meta name="description" content="Check if a Minecraft server is online: players, MOTD, version and icon. Java and Bedrock.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' rx='3' fill='%2322252b'/><circle cx='8' cy='8' r='4' fill='%2355ff55'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>Server Status</h1>
+      <p class="lede">Is the Minecraft server up? Type its address to see who's online.</p>
+    </header>
+
+    <form id="form" class="search" autocomplete="off">
+      <div class="edition" role="radiogroup" aria-label="Edition">
+        <label><input type="radio" name="edition" value="java" checked><span>Java</span></label>
+        <label><input type="radio" name="edition" value="bedrock"><span>Bedrock</span></label>
+      </div>
+      <input id="address" name="address" type="text" inputmode="url" spellcheck="false"
+             placeholder="play.example.net or 123.45.67.89:25565" aria-label="Server address" required>
+      <button type="submit" id="go">Check</button>
+    </form>
+
+    <div class="quick">
+      <div id="favs" class="chips" aria-label="Saved servers"></div>
+      <div class="chips examples">
+        <span class="muted">Try:</span>
+        <button type="button" class="chip" data-addr="hypixel.net" data-ed="java">hypixel.net</button>
+        <button type="button" class="chip" data-addr="play.cubecraft.net" data-ed="java">play.cubecraft.net</button>
+        <button type="button" class="chip" data-addr="mco.cubecraft.net" data-ed="bedrock">mco.cubecraft.net (Bedrock)</button>
+      </div>
+    </div>
+
+    <section id="result" aria-live="polite"></section>
+  </main>
+
+  <footer class="wrap foot">
+    Data from <a href="https://mcsrvstat.us" target="_blank" rel="noopener">mcsrvstat.us</a> (updates about every 5 minutes)
+    · Player heads from <a href="https://mc-heads.net" target="_blank" rel="noopener">mc-heads.net</a>
+    · <a href="https://github.com/Hybridash/ServerStatus">Source</a>
+  </footer>
+
+  <script src="src/motd.js"></script>
+  <script src="src/app.js"></script>
+</body>
+</html>
