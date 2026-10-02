@@ -115,7 +115,7 @@ button { font: inherit; cursor: pointer; }
   margin-top: 16px; padding: 12px 14px; border-radius: 8px;
   background: var(--motd-bg); color: #aaaaaa;
   font: 15px/1.5 "JetBrains Mono", ui-monospace, monospace;
-  white-space: pre-wrap; overflow-wrap: anywhere; text-align: center;
+  white-space: pre-wrap; overflow-wrap: anywhere; text-align: left;
   text-shadow: 2px 2px 0 rgba(0,0,0,.35);
 }
 
